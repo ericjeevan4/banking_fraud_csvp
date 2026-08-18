@@ -711,7 +711,22 @@ def api_predict():
                 "transaction_date": str(row["TransactionDate"]),
                 "fraud_probability": float(
                     row["FraudProbability"]
-                )
+                ),
+            
+                # =====================================================
+                # 10 IMPORTANT FEATURES FOR INSIGHTS / PLOTS
+                # =====================================================
+            
+                "TransactionAmount": row["TransactionAmount"],
+                "TransactionType": str(row["TransactionType"]),
+                "Location": str(row["Location"]),
+                "Channel": str(row["Channel"]),
+                "CustomerAge": row["CustomerAge"],
+                "CustomerOccupation": str(row["CustomerOccupation"]),
+                "AccountBalance": row["AccountBalance"],
+                "AnnualIncome": row["AnnualIncome"],
+                "CurrentAddressMonthCount": row["CurrentAddressMonthCount"],
+                "PreviousAddressMonthCount": row["PreviousAddressMonthCount"]
             })
 
         fraud_accounts.append({
